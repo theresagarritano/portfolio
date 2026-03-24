@@ -1,11 +1,11 @@
 const skills = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Python",
-  "SQL",
-  // TODO: add your skills
+  "Figma",
+  "UX Research",
+  "Design Systems",
+  "Prototyping",
+  "Webflow",
+  "Human-Centered Design",
+  "Vibe Coding",
 ];
 
 export default function About() {
@@ -14,14 +14,20 @@ export default function About() {
       <h2 className="text-3xl font-bold mb-10">About Me</h2>
       <div className="grid sm:grid-cols-2 gap-12">
         <div className="flex flex-col gap-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-          {/* TODO: replace with your bio */}
           <p>
-            I&apos;m a software engineer with a passion for building products
-            that are fast, accessible, and a joy to use.
+            I&apos;m a Lead Product Designer at Atlassian, based in Austin, TX.
+            I specialize in turning complex systems into intuitive, memorable
+            user experiences — with a strong eye for interface craft and
+            design systems.
           </p>
           <p>
-            When I&apos;m not writing code, you can find me hiking, reading, or
-            experimenting with new tech.
+            I hold certifications in Human-Centered Design from IDEO and am a
+            Webflow Enterprise Partner. I studied at the Rochester Institute of
+            Technology&apos;s College of Imaging Arts &amp; Sciences.
+          </p>
+          <p>
+            Previously, I&apos;ve designed at Realtor.com, Funsize, BigCommerce,
+            and Base CRM.
           </p>
           <a
             href="/resume.pdf"

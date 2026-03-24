@@ -1,9 +1,6 @@
-const EMAIL = "your@email.com"; // TODO: replace with your email
-
 const socials = [
-  { label: "GitHub", href: "https://github.com/yourusername" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourusername" },
-  // TODO: add or remove socials
+  { label: "LinkedIn", href: "https://linkedin.com/in/theresagarritano" },
+  // TODO: add GitHub or other socials if desired
 ];
 
 export default function Contact() {
@@ -11,12 +8,13 @@ export default function Contact() {
     <section className="max-w-4xl mx-auto px-6 py-20">
       <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
       <p className="text-gray-600 dark:text-gray-400 mb-10 max-w-lg">
-        I&apos;m currently open to new opportunities. Whether you have a
-        question or just want to say hi, my inbox is always open.
+        Interested in working together or just want to connect? Reach out on
+        LinkedIn or drop me an email.
       </p>
       <div className="flex flex-col gap-4">
+        {/* TODO: replace with your email address */}
         <a
-          href={`mailto:${EMAIL}`}
+          href="mailto:your@email.com"
           className="inline-flex w-fit px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors"
         >
           Say Hello

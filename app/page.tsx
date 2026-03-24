@@ -10,8 +10,8 @@ export default function Home() {
         Theresa Garritano
       </h1>
       <p className="text-xl text-gray-600 dark:text-gray-400 max-w-xl">
-        {/* TODO: update with your title/pitch */}
-        Software engineer who loves building clean, user-focused products.
+        Lead Product Designer at Atlassian. I turn complex systems into
+        memorable user experiences and beautiful interfaces.
       </p>
       <div className="flex gap-4 mt-4">
         <Link

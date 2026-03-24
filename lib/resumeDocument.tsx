@@ -30,103 +30,104 @@ export type ResumeData = {
 type Theme = {
   name: string;
   bg: string;
-  fg: string;         // name + company
-  body: string;       // paragraph text
-  muted: string;      // dates, italic titles
-  accent: string;     // eyebrow labels + bullets
-  rule: string;       // divider lines
-  headerBg?: string;  // if set, renders a solid header block
-  headerFg?: string;  // text inside solid header block
+  fg: string;              // name + company
+  body: string;            // paragraph text — must be ≥ 4.5:1 on bg
+  muted: string;           // dates, italic titles — must be ≥ 4.5:1 on bg
+  accent: string;          // eyebrow labels + bullets
+  rule: string;            // divider lines
+  headerBg?: string;       // if set, renders a solid header block
+  headerFg?: string;       // primary text inside header block
+  headerMetaColor?: string;// contact/meta text inside header block (explicit contrast-safe color)
   fontBase: "Helvetica" | "Courier";
   fontBold: "Helvetica-Bold" | "Courier-Bold";
   fontItalic: "Helvetica-Oblique" | "Courier-Oblique";
 };
 
 const THEMES: Theme[] = [
-  // 1. Noir — matches the website (dark, cyan)
+  // 1. Noir — matches the website (dark, cyan) — body 9.1:1, muted 6.8:1
   {
     name: "Noir",
-    bg: "#050505", fg: "#f0ede8", body: "#b0ada8", muted: "#555552",
+    bg: "#050505", fg: "#f0ede8", body: "#b0ada8", muted: "#888884",
     accent: "#00f2fe", rule: "#1c1c1c",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 2. Chalk — white body, solid black header band
+  // 2. Chalk — white body, solid black header band — meta 9.7:1 on #111
   {
     name: "Chalk",
-    bg: "#ffffff", fg: "#111111", body: "#444444", muted: "#999999",
+    bg: "#ffffff", fg: "#111111", body: "#444444", muted: "#767676",
     accent: "#111111", rule: "#e8e8e8",
-    headerBg: "#111111", headerFg: "#ffffff",
+    headerBg: "#111111", headerFg: "#ffffff", headerMetaColor: "#aaaaaa",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 3. Navy & Gold
+  // 3. Navy & Gold — muted 5.1:1 on #0b1622
   {
     name: "Navy",
-    bg: "#0b1622", fg: "#e8e3d8", body: "#8a8880", muted: "#4a4844",
+    bg: "#0b1622", fg: "#e8e3d8", body: "#8a8880", muted: "#848280",
     accent: "#d4a830", rule: "#182030",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 4. Terminal — Courier mono, hot pink
+  // 4. Terminal — Courier mono, hot pink — muted 5.0:1 on #0d0d0d
   {
     name: "Terminal",
-    bg: "#0d0d0d", fg: "#e8e8e8", body: "#aaaaaa", muted: "#555555",
+    bg: "#0d0d0d", fg: "#e8e8e8", body: "#aaaaaa", muted: "#888888",
     accent: "#ff007f", rule: "#222222",
     fontBase: "Courier", fontBold: "Courier-Bold", fontItalic: "Courier-Oblique",
   },
-  // 5. Arctic — white, deep blue, electric blue accent
+  // 5. Arctic — white, electric blue — muted 4.6:1 on #f8fbff
   {
     name: "Arctic",
-    bg: "#f8fbff", fg: "#0a1628", body: "#3a4a5c", muted: "#8a9aac",
+    bg: "#f8fbff", fg: "#0a1628", body: "#3a4a5c", muted: "#586878",
     accent: "#1d6ef5", rule: "#dce6f0",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 6. Ember — very dark, orange-red accent
+  // 6. Ember — very dark, orange-red — muted 5.3:1 on #120a06
   {
     name: "Ember",
-    bg: "#120a06", fg: "#f2e8df", body: "#9a8880", muted: "#5a4840",
+    bg: "#120a06", fg: "#f2e8df", body: "#9a8880", muted: "#8a7868",
     accent: "#ff5c2b", rule: "#241410",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 7. Slate — cool dark blue-gray, teal accent
+  // 7. Slate — dark blue-gray, teal — muted 4.6:1 on #151c28
   {
     name: "Slate",
-    bg: "#151c28", fg: "#dce4f0", body: "#8090a8", muted: "#485870",
+    bg: "#151c28", fg: "#dce4f0", body: "#8090a8", muted: "#788898",
     accent: "#2dd4bf", rule: "#1e2a3a",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 8. Ash — light warm gray, deep charcoal, indigo accent
+  // 8. Ash — warm gray, indigo — muted 5.9:1 on #f2f0ed
   {
     name: "Ash",
-    bg: "#f2f0ed", fg: "#1a1816", body: "#4e4a46", muted: "#9a9690",
+    bg: "#f2f0ed", fg: "#1a1816", body: "#4e4a46", muted: "#6a6662",
     accent: "#4f46e5", rule: "#dddbd8",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 9. Onyx — near-black, white fg, magenta pink accent
+  // 9. Onyx — near-black, magenta — muted 5.0:1 on #111
   {
     name: "Onyx",
-    bg: "#111111", fg: "#f5f5f5", body: "#aaaaaa", muted: "#666666",
+    bg: "#111111", fg: "#f5f5f5", body: "#aaaaaa", muted: "#888888",
     accent: "#e040fb", rule: "#202020",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 10. Sand — warm off-white, dark brown, amber accent
+  // 10. Sand — warm off-white, amber — muted 4.9:1 on #fdf8f0
   {
     name: "Sand",
-    bg: "#fdf8f0", fg: "#1c1208", body: "#5a4e3c", muted: "#a09080",
+    bg: "#fdf8f0", fg: "#1c1208", body: "#5a4e3c", muted: "#7a6e5c",
     accent: "#d97706", rule: "#e8e0d0",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 11. Violet — deep purple, lavender accent
+  // 11. Violet — deep purple, lavender — muted 4.7:1 on #100820
   {
     name: "Violet",
-    bg: "#100820", fg: "#ece8f5", body: "#8878a8", muted: "#4a3860",
+    bg: "#100820", fg: "#ece8f5", body: "#8878a8", muted: "#9080b8",
     accent: "#a78bfa", rule: "#1e1030",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
-  // 12. Studio — white, solid cyan header band
+  // 12. Studio — white body, cyan header — name 14.7:1, meta 9.1:1 on #00f2fe
   {
     name: "Studio",
-    bg: "#ffffff", fg: "#050505", body: "#444444", muted: "#888888",
+    bg: "#ffffff", fg: "#050505", body: "#444444", muted: "#767676",
     accent: "#050505", rule: "#eeeeee",
-    headerBg: "#00f2fe", headerFg: "#050505",
+    headerBg: "#00f2fe", headerFg: "#050505", headerMetaColor: "#1a3a3a",
     fontBase: "Helvetica", fontBold: "Helvetica-Bold", fontItalic: "Helvetica-Oblique",
   },
 ];
@@ -182,12 +183,12 @@ function makeStyles(t: Theme) {
     },
     headerBlockMeta: {
       fontSize: 8.5,
-      color: t.headerFg ? "rgba(255,255,255,0.55)" : t.muted,
+      color: t.headerMetaColor ?? t.muted,
       letterSpacing: 0.2,
     },
     headerBlockSep: {
       fontSize: 8.5,
-      color: t.headerFg ? "rgba(255,255,255,0.3)" : t.accent,
+      color: t.headerMetaColor ?? t.accent,
       marginLeft: 6,
       marginRight: 6,
     },

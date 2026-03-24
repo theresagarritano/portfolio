@@ -34,21 +34,20 @@ export default function Home() {
 
         <FadeUp delay={0.5}>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-12 border-t border-[#1a1a1a] pt-8">
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-2">
+              {/* py-3 + -my-3 expands the hover area vertically without shifting layout */}
               <Link
                 href="/projects"
-                className="group flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#f0ede8] hover:text-[#00f2fe] transition-colors duration-300"
+                className="group flex items-center gap-2 py-3 px-4 -my-3 -ml-4 text-xs uppercase tracking-[0.2em] text-[#f0ede8] hover:text-[#00f2fe] transition-colors duration-300"
               >
                 View Work
-                {/* aria-hidden: decorative arrow, not part of the link label */}
                 <span aria-hidden="true" className="translate-x-0 group-hover:translate-x-1 transition-transform duration-300 text-[#00f2fe] opacity-0 group-hover:opacity-100">
                   →
                 </span>
               </Link>
-              {/* #888884 on #050505 = 6.3:1 — passes WCAG AA */}
               <Link
                 href="/contact"
-                className="text-xs uppercase tracking-[0.2em] text-[#888884] hover:text-[#ff007f] transition-colors duration-300"
+                className="py-3 px-4 -my-3 text-xs uppercase tracking-[0.2em] text-[#888884] hover:text-[#ff007f] transition-colors duration-300"
               >
                 Get in Touch
               </Link>

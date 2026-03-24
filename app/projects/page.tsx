@@ -118,7 +118,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View ${item.company} case study (opens in new tab)`}
-                    className="mt-1 group/link inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] hover:opacity-70 transition-opacity duration-300 w-fit"
+                    className="group/link inline-flex items-center gap-2 py-2 px-3 -mx-3 text-xs uppercase tracking-[0.2em] hover:opacity-70 transition-opacity duration-300 w-fit"
                     style={{ color: item.accent }}
                   >
                     View Case Study

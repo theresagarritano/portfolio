@@ -42,7 +42,7 @@ export default function Contact() {
 
             <a
               href="mailto:theresagarritano@gmail.com"
-              className="group inline-flex items-center gap-3 w-fit"
+              className="group inline-flex items-center gap-3 py-3 px-4 -mx-4 w-fit"
             >
               <span className="text-[clamp(1.1rem,2.5vw,2rem)] font-semibold text-[#f0ede8] group-hover:text-[#00f2fe] transition-colors duration-300 break-all sm:break-normal">
                 theresagarritano@gmail.com
@@ -61,7 +61,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     aria-label={social.ariaLabel}
                     /* #888884 = 6.3:1 — passes WCAG AA */
-                    className="group inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[#888884] hover:text-[#ff007f] transition-colors duration-300"
+                    className="group inline-flex items-center gap-2 py-3 px-4 -mx-4 text-xs uppercase tracking-[0.2em] text-[#888884] hover:text-[#ff007f] transition-colors duration-300"
                   >
                     {social.label}
                     <span aria-hidden="true" className="opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-300">→</span>

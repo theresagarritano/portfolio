@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FadeUp from "@/components/FadeUp";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Experience",
   description: "Selected design experience at Atlassian, Realtor.com, Funsize, BigCommerce, and Base CRM.",
 };
 
@@ -59,15 +59,15 @@ export default function Projects() {
     <section className="min-h-screen max-w-6xl mx-auto px-5 sm:px-8 py-32">
       <FadeUp delay={0.1}>
         <p aria-hidden="true" className="text-xs uppercase tracking-[0.25em] text-[#00f2fe] mb-5">
-          Work
+          Experience
         </p>
       </FadeUp>
 
       <FadeUp delay={0.2}>
         {/* h1: primary heading for this page */}
         <h1 className="text-[clamp(2.5rem,6vw,6rem)] font-bold leading-[0.92] tracking-tight mb-16">
-          Selected<br />
-          <span className="gradient-text">Experience</span>
+          Complexity,<br />
+          <span className="gradient-text">Made Human.</span>
         </h1>
       </FadeUp>
 

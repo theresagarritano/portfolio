@@ -43,31 +43,36 @@ const caseStudies = [
 
 export default function Projects() {
   return (
-    <section className="max-w-4xl mx-auto px-6 py-20">
-      <h2 className="text-3xl font-bold mb-2">Work</h2>
-      <p className="text-gray-500 dark:text-gray-400 mb-10 text-sm">
-        A selection of companies and projects I&apos;ve designed for.{" "}
-        {/* TODO: add case study links as they become available */}
+    <section className="min-h-screen max-w-6xl mx-auto px-8 py-40">
+      <p className="text-xs uppercase tracking-[0.25em] text-[#c9a96e] mb-6">
+        Work
       </p>
-      <ul className="flex flex-col gap-6">
-        {caseStudies.map((item) => (
+      <h2 className="text-[clamp(2.5rem,6vw,6rem)] font-bold leading-[0.95] tracking-tight mb-20">
+        Selected<br />Experience
+      </h2>
+
+      <ul className="flex flex-col border-t border-[#1f1f1d]">
+        {caseStudies.map((item, i) => (
           <li
             key={item.company}
-            className="flex flex-col sm:flex-row sm:items-start gap-4 p-6 border border-gray-200 dark:border-gray-800 rounded-xl hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
+            className="group flex flex-col sm:flex-row sm:items-start gap-6 py-10 border-b border-[#1f1f1d] hover:border-[#3a3a38] transition-colors"
           >
-            <div className="sm:w-40 shrink-0">
-              <p className="font-semibold text-gray-900 dark:text-white">{item.company}</p>
-              <p className="text-xs text-gray-500 mt-0.5">{item.role}</p>
+            <span className="text-xs text-[#3a3a38] w-8 shrink-0 pt-1">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div className="sm:w-56 shrink-0">
+              <p className="font-semibold text-[#f0ede8] text-lg">{item.company}</p>
+              <p className="text-xs text-[#666660] mt-1 uppercase tracking-[0.15em]">{item.role}</p>
             </div>
-            <div className="flex flex-col gap-3 flex-1">
-              <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            <div className="flex flex-col gap-4 flex-1">
+              <p className="text-sm text-[#999994] leading-relaxed max-w-lg">
                 {item.description}
               </p>
               <ul className="flex flex-wrap gap-2">
                 {item.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="px-2 py-0.5 bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 rounded text-xs font-medium"
+                    className="px-3 py-1 border border-[#1f1f1d] text-[#666660] rounded-full text-xs"
                   >
                     {tag}
                   </li>
@@ -78,7 +83,7 @@ export default function Projects() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors w-fit"
+                  className="text-xs uppercase tracking-[0.2em] text-[#c9a96e] hover:opacity-60 transition-opacity w-fit"
                 >
                   View Case Study →
                 </a>

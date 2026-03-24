@@ -4,6 +4,8 @@ import { renderToBuffer } from "@react-pdf/renderer";
 import { ResumeDocument, type ResumeData } from "@/lib/resumeDocument";
 
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+export const maxDuration = 30;
 
 const PROFESSIONAL_BACKGROUND = `
 Name: Theresa Garritano
@@ -29,6 +31,7 @@ Certifications:
 `.trim();
 
 export async function POST() {
+  try {
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
   if (!apiKey) {
@@ -145,4 +148,9 @@ ${PROFESSIONAL_BACKGROUND}`,
       "Content-Disposition": 'attachment; filename="Theresa-Garritano-Resume.pdf"',
     },
   });
+  } catch (err) {
+    console.error("[generate-resume] error:", err);
+    const message = err instanceof Error ? err.message : "Unknown error";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }

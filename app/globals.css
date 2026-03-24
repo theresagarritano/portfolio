@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #080808;
+  --background: #050505;
   --foreground: #f0ede8;
   --muted: #666660;
-  --border: #1f1f1d;
-  --accent: #c9a96e;
+  --border: #1a1a1a;
+  --cyan: #00f2fe;
+  --pink: #ff007f;
 }
 
 @theme inline {
@@ -15,19 +16,77 @@
   --font-mono: var(--font-geist-mono);
 }
 
+* {
+  cursor: none !important;
+}
+
+@media (pointer: coarse) {
+  * { cursor: auto !important; }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, sans-serif;
 }
 
-/* Subtle grain overlay */
+/* Grain overlay */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 9998;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Animated gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--cyan), var(--pink), var(--cyan));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 4s linear infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* CTA glow pulse */
+.cta-pulse {
+  animation: cta-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.35); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+}
+
+/* Marquee */
+.marquee-track {
+  animation: marquee 18s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Logo glow */
+@keyframes logo-glow {
+  0%, 100% {
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.15);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.4), 0 0 40px rgba(255, 0, 127, 0.1);
+  }
+}
+
+.logo-glow {
+  animation: logo-glow 3s ease-in-out infinite;
 }

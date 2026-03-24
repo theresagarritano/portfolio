@@ -46,13 +46,14 @@ export default function About() {
               design systems.
             </p>
             <p>
-              I hold certifications in Human-Centered Design from IDEO and am a
-              Webflow Enterprise Partner. I studied at the Rochester Institute of
-              Technology&apos;s College of Imaging Arts &amp; Sciences.
+              I hold certifications from IDEO in Human-Centered Design and Leading
+              Complex Projects, am a Webflow Enterprise Partner, and am Atlassian
+              Rovo Certified. I hold a BFA from the Rochester Institute of Technology
+              in Graphic Design, Web Design &amp; Development, and Psychology.
             </p>
             <p>
-              Previously, I&apos;ve designed at Realtor.com, Funsize, BigCommerce,
-              and Base CRM.
+              Previously, I led design at Realtor.com and held roles at Funsize,
+              BigCommerce, Base CRM (acquired by Zendesk), Spiceworks, and The Daily Dot.
             </p>
             <GenerateResumeButton />
           </div>

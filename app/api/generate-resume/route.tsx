@@ -14,20 +14,25 @@ Location: Austin, TX
 Email: theresagarritano@gmail.com
 
 Experience:
-- Lead Product Designer at Atlassian (current) — Leading product design for enterprise collaboration tools used by millions worldwide. Driving design strategy, systems thinking, and cross-functional alignment across complex product surfaces.
-- Senior Product Designer at Realtor.com — Designed consumer-facing search and listing experiences for one of the largest real estate platforms in the US.
-- Product Designer at Funsize — Worked at a boutique product design agency delivering UX strategy and interaction design for clients across industries.
-- Product Designer at BigCommerce — Designed merchant-facing tools for a leading e-commerce platform, focused on improving conversion and usability.
-- Product Designer at Base CRM — Early design team member at a sales CRM startup, contributing to core workflows and the mobile experience.
+- Lead Product Designer at Atlassian (Jun 2025 – Present, Remote) — Current role.
+- Senior Product Designer at Realtor.com (Dec 2023 – Jun 2025, Austin, Hybrid) — Integral role in Listing Agent Products, one of the highest-functioning product areas. Partnered with PM and Engineering Lead across the full product lifecycle, shipping to 100 million unique users. Led design sprints, contributed to design system, and scaled design direction across functional areas.
+- Staff Product Designer at Funsize (Sep 2021 – Dec 2023, Remote) — Bridged strategy and execution at a boutique product design agency. Delivered design for clients including Realtor.com (Wildfire Risk) and Volvo Cars (Webby nominee). Mentored designers and contributed to playbooks.
+- Senior Product Designer at Funsize (Sep 2019 – Sep 2021, Austin) — Delivered UX strategy and interaction design across fintech, healthcare, and SaaS clients.
+- Product Designer at BigCommerce (Apr 2017 – Mar 2019, Austin) — Full-stack product design for a leading e-commerce platform, focused on merchant-facing tools, conversion, and design system consistency.
+- Product Designer at Base CRM / Zendesk Sell (May 2015 – Jan 2016, San Francisco Bay Area) — Contributed to core CRM workflows and mobile experience at an early-stage startup, later acquired by Zendesk.
+- UX/UI Designer at Spiceworks (May 2014 – May 2015, Austin) — In-house UX/UI designer at an IT platform and community.
+- UX/UI Designer & Front-End Developer at The Daily Dot (Jun 2013 – May 2014, Austin) — Design and front-end development for a digital media publication.
 
-Skills: Figma, UX Research, Design Systems, Prototyping, Webflow, Human-Centered Design
+Skills: Figma, UX Research, Design Systems, Prototyping, Webflow, Human-Centered Design, Design Strategy, Cross-functional Leadership, Vibe Coding
 
 Education:
-- Rochester Institute of Technology, College of Imaging Arts & Sciences
+- Rochester Institute of Technology — BFA, Graphic Design, Web Design & Development, Psychology (2009–2013), GPA 3.45
 
 Certifications:
-- Human-Centered Design, IDEO
-- Webflow Enterprise Partner
+- Leading Complex Projects — IDEO (Jul 2024)
+- Webflow Certification, Enterprise Partner (Jul 2023)
+- Design Kit: The Course for Human-Centered Design — IDEO (Nov 2018)
+- Atlassian Rovo Certified
 `.trim();
 
 export async function POST() {
@@ -73,45 +78,71 @@ ${PROFESSIONAL_BACKGROUND}`,
       {
         company: "Atlassian",
         title: "Lead Product Designer",
-        period: "2022 – Present",
+        period: "Jun 2025 – Present",
         highlights: [
-          "Lead design strategy for enterprise collaboration tools used by millions of teams worldwide.",
-          "Drive cross-functional alignment across product, engineering, and research on complex multi-surface initiatives.",
-          "Establish and evolve design system patterns that scale across the Atlassian product portfolio.",
+          "Lead product design at one of the world's leading enterprise software companies.",
         ],
       },
       {
         company: "Realtor.com",
         title: "Senior Product Designer",
-        period: "2020 – 2022",
+        period: "Dec 2023 – Jun 2025",
         highlights: [
-          "Designed consumer-facing search and listing experiences on one of the US's largest real estate platforms.",
-          "Led end-to-end design for high-traffic features, improving engagement and conversion metrics.",
+          "Integral designer for Listing Agent Products, one of the platform's highest-functioning product areas.",
+          "Partnered with PM and Engineering from research through polished delivery, shipping to 100 million unique users.",
+          "Led design sprints, facilitated workshops, contributed to design system, and scaled design direction across functional areas.",
         ],
       },
       {
         company: "Funsize",
-        title: "Product Designer",
-        period: "2018 – 2020",
+        title: "Staff Product Designer",
+        period: "Sep 2021 – Dec 2023",
         highlights: [
-          "Delivered UX strategy and interaction design for clients across fintech, healthcare, and SaaS.",
+          "Bridged strategy and execution at a boutique product design agency (Inc. 5000, Texas #94).",
+          "Delivered design for clients including Realtor.com and Volvo Cars (2x Webby nominee).",
+          "Mentored designers, contributed to playbooks, and helped define agency-wide design processes.",
+        ],
+      },
+      {
+        company: "Funsize",
+        title: "Senior Product Designer",
+        period: "Sep 2019 – Sep 2021",
+        highlights: [
+          "Delivered UX strategy and interaction design across fintech, healthcare, and SaaS clients.",
           "Facilitated design sprints and research synthesis to rapidly validate product concepts.",
         ],
       },
       {
         company: "BigCommerce",
         title: "Product Designer",
-        period: "2016 – 2018",
+        period: "Apr 2017 – Mar 2019",
         highlights: [
-          "Designed merchant-facing tools for a leading e-commerce platform with focus on usability and conversion.",
+          "Designed merchant-facing tools for a leading e-commerce platform serving 60,000+ merchants.",
+          "Led end-to-end design across multiple product launches including Facebook Marketplace and WordPress integrations.",
         ],
       },
       {
-        company: "Base CRM",
+        company: "Base CRM (acquired by Zendesk)",
         title: "Product Designer",
-        period: "2014 – 2016",
+        period: "May 2015 – Jan 2016",
         highlights: [
-          "Early design team member contributing to core CRM workflows and mobile experience.",
+          "Contributed to core CRM workflows and mobile experience at an early-stage startup, later acquired by Zendesk.",
+        ],
+      },
+      {
+        company: "Spiceworks",
+        title: "UX/UI Designer",
+        period: "May 2014 – May 2015",
+        highlights: [
+          "In-house UX/UI designer at an IT platform and community serving millions of IT professionals.",
+        ],
+      },
+      {
+        company: "The Daily Dot",
+        title: "UX/UI Designer & Front-End Developer",
+        period: "Jun 2013 – May 2014",
+        highlights: [
+          "Design and front-end development for a digital media publication.",
         ],
       },
     ],
@@ -124,16 +155,25 @@ ${PROFESSIONAL_BACKGROUND}`,
       "Human-Centered Design",
       "Design Strategy",
       "Cross-functional Leadership",
+      "Vibe Coding",
     ],
     education: [
       {
         institution: "Rochester Institute of Technology",
-        degree: "College of Imaging Arts & Sciences",
+        degree: "BFA, Graphic Design, Web Design & Development, Psychology",
+        detail: "2009 – 2013 · GPA 3.45 · AIGA, Gamma Epsilon Tau",
+      },
+      {
+        institution: "Art Institute of Pittsburgh",
+        degree: "Certificate of Completion, Interior Design",
+        detail: "2008 · Selective Summer Studio Program",
       },
     ],
     certifications: [
-      "Human-Centered Design — IDEO",
-      "Webflow Enterprise Partner",
+      "Leading Complex Projects — IDEO (Jul 2024)",
+      "Webflow Certification, Enterprise Partner (Jul 2023)",
+      "Design Kit: The Course for Human-Centered Design — IDEO (Nov 2018)",
+      "Atlassian Rovo Certified",
     ],
   };
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FadeUp from "@/components/FadeUp";
+import GenerateResumeButton from "@/components/GenerateResumeButton";
 
 export const metadata: Metadata = {
   title: "About",
@@ -53,16 +54,7 @@ export default function About() {
               Previously, I&apos;ve designed at Realtor.com, Funsize, BigCommerce,
               and Base CRM.
             </p>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download resume (opens PDF in new tab)"
-              className="mt-1 group inline-flex items-center gap-2 py-3 px-4 -mx-4 w-fit text-xs uppercase tracking-[0.2em] text-[#f0ede8] hover:text-[#00f2fe] transition-colors duration-300"
-            >
-              Download Resume
-              <span aria-hidden="true" className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">→</span>
-            </a>
+            <GenerateResumeButton />
           </div>
         </FadeUp>
 

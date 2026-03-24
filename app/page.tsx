@@ -40,7 +40,7 @@ export default function Home() {
                 href="/projects"
                 className="group flex items-center gap-2 py-3 px-4 -my-3 -ml-4 text-xs uppercase tracking-[0.2em] text-[#f0ede8] hover:text-[#00f2fe] transition-colors duration-300"
               >
-                View Work
+                View Experience
                 <span aria-hidden="true" className="translate-x-0 group-hover:translate-x-1 transition-transform duration-300 text-[#00f2fe] opacity-0 group-hover:opacity-100">
                   →
                 </span>

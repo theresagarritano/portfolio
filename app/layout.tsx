@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Theresa Garritano — Portfolio",
+    default: "Theresa Garritano",
     template: "%s — Theresa Garritano",
   },
-  description: "Lead Product Designer at Atlassian. Turning complex systems into memorable user experiences.",
+  description: "Lead Product Designer at Atlassian. A professional showcase of expertise in design systems, UX research, and human-centered product design.",
   openGraph: {
-    title: "Theresa Garritano — Portfolio",
+    title: "Theresa Garritano",
     description: "Lead Product Designer at Atlassian.",
     type: "website",
   },

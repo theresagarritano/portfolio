@@ -3,7 +3,6 @@
 :root {
   --background: #050505;
   --foreground: #f0ede8;
-  --muted: #666660;
   --border: #1a1a1a;
   --cyan: #00f2fe;
   --pink: #ff007f;
@@ -16,7 +15,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Hide system cursor on pointer devices only */
+/* Hide system cursor only on fine-pointer (mouse) devices */
 @media (pointer: fine) {
   * { cursor: none !important; }
 }
@@ -25,6 +24,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+
+/* ─── Focus ─────────────────────────────────────────────────────────────────
+   Clear, high-contrast focus ring for keyboard navigation.
+   Uses :focus-visible so it only appears for keyboard/programmatic focus,
+   not mouse clicks. */
+:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+  border-radius: 3px;
 }
 
 /* Grain overlay */
@@ -38,7 +47,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* Animated gradient text */
+/* ─── Gradient text ──────────────────────────────────────────────────────── */
 .gradient-text {
   background: linear-gradient(90deg, var(--cyan), var(--pink), var(--cyan));
   background-size: 200% auto;
@@ -53,7 +62,16 @@ body::after {
   100% { background-position: 200% center; }
 }
 
-/* Marquee */
+/* Windows High Contrast Mode — restore readable text */
+@media (forced-colors: active) {
+  .gradient-text {
+    background: none;
+    -webkit-text-fill-color: ButtonText;
+    color: ButtonText;
+  }
+}
+
+/* ─── Marquee ────────────────────────────────────────────────────────────── */
 .marquee-track {
   animation: marquee 22s linear infinite;
   width: max-content;
@@ -72,4 +90,23 @@ body::after {
 
 .logo-glow {
   animation: logo-glow 4s ease-in-out infinite;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text {
+    animation: none;
+    -webkit-text-fill-color: var(--foreground);
+    background: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  .logo-glow {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

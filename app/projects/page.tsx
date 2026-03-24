@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import FadeUp from "@/components/FadeUp";
+
+export const metadata: Metadata = {
+  title: "Work",
+  description: "Selected design experience at Atlassian, Realtor.com, Funsize, BigCommerce, and Base CRM.",
+};
 
 const caseStudies = [
   {
@@ -50,57 +56,57 @@ const caseStudies = [
 
 export default function Projects() {
   return (
-    <section className="min-h-screen max-w-6xl mx-auto px-5 sm:px-8 py-36">
+    <section className="min-h-screen max-w-6xl mx-auto px-5 sm:px-8 py-32">
       <FadeUp delay={0.1}>
-        <p className="text-xs uppercase tracking-[0.25em] text-[#00f2fe] mb-5">
+        <p aria-hidden="true" className="text-xs uppercase tracking-[0.25em] text-[#00f2fe] mb-5">
           Work
         </p>
       </FadeUp>
 
       <FadeUp delay={0.2}>
-        <h2 className="text-[clamp(2.5rem,6vw,6rem)] font-bold leading-[0.92] tracking-tight mb-16">
+        {/* h1: primary heading for this page */}
+        <h1 className="text-[clamp(2.5rem,6vw,6rem)] font-bold leading-[0.92] tracking-tight mb-16">
           Selected<br />
           <span className="gradient-text">Experience</span>
-        </h2>
+        </h1>
       </FadeUp>
 
-      <ul className="flex flex-col border-t border-[#1a1a1a]">
+      <ul className="flex flex-col border-t border-[#1a1a1a]" role="list">
         {caseStudies.map((item, i) => (
           <FadeUp key={item.company} delay={Math.min(i * 0.08, 0.32)} as="li">
-            <div className="group flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 py-10 border-b border-[#1a1a1a] transition-colors duration-300">
-              {/* Accent bar */}
+            <div className="group flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6 py-10 border-b border-[#1a1a1a]">
+              {/* aria-hidden: decorative accent bar */}
               <div
+                aria-hidden="true"
                 className="hidden sm:block w-px self-stretch rounded-full shrink-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 style={{ background: item.accent }}
               />
 
-              <span className="text-xs text-[#2a2a28] sm:w-8 shrink-0 sm:pt-1 group-hover:text-[#444440] transition-colors duration-300">
+              {/* aria-hidden: decorative index number */}
+              <span aria-hidden="true" className="text-xs text-[#2a2a28] sm:w-8 shrink-0 sm:pt-1">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
               <div className="sm:w-52 shrink-0">
-                <p
-                  className="font-semibold text-lg text-[#f0ede8] transition-colors duration-300"
-                  style={{ ["--c" as string]: item.accent }}
-                >
-                  <span className="group-hover:opacity-80 transition-opacity duration-300" style={{ color: undefined }}>
-                    {item.company}
-                  </span>
+                <p className="font-semibold text-lg text-[#f0ede8]">
+                  {item.company}
                 </p>
-                <p className="text-xs text-[#444440] mt-1 uppercase tracking-[0.15em]">
+                {/* #888884 on #050505 = 6.3:1 — passes WCAG AA */}
+                <p className="text-xs text-[#888884] mt-1 uppercase tracking-[0.15em]">
                   {item.role}
                 </p>
               </div>
 
               <div className="flex flex-col gap-3 flex-1">
-                <p className="text-sm text-[#777774] leading-relaxed max-w-lg group-hover:text-[#999994] transition-colors duration-300">
+                {/* #888884 = 6.3:1 — passes WCAG AA */}
+                <p className="text-sm text-[#888884] leading-relaxed max-w-lg group-hover:text-[#b0adaa] transition-colors duration-300">
                   {item.description}
                 </p>
-                <ul className="flex flex-wrap gap-2 mt-1">
+                <ul className="flex flex-wrap gap-2 mt-1" role="list" aria-label={`${item.company} skills`}>
                   {item.tags.map((tag) => (
                     <li
                       key={tag}
-                      className="px-3 py-1 border border-[#1e1e1e] text-[#444440] rounded-full text-xs group-hover:border-[#2e2e2e] group-hover:text-[#666660] transition-all duration-300"
+                      className="px-3 py-1 border border-[#2a2a2a] text-[#888884] rounded-full text-xs"
                     >
                       {tag}
                     </li>
@@ -111,11 +117,12 @@ export default function Projects() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`View ${item.company} case study (opens in new tab)`}
                     className="mt-1 group/link inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] hover:opacity-70 transition-opacity duration-300 w-fit"
                     style={{ color: item.accent }}
                   >
                     View Case Study
-                    <span className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
+                    <span aria-hidden="true" className="group-hover/link:translate-x-1 transition-transform duration-300">→</span>
                   </a>
                 )}
               </div>

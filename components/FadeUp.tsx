@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 type Tag = "div" | "li" | "section" | "article" | "span" | "p";
@@ -24,15 +24,16 @@ interface FadeUpProps {
 export default function FadeUp({ children, delay = 0, className, as = "div" }: FadeUpProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const prefersReducedMotion = useReducedMotion();
   const Component = MotionTag[as];
 
   return (
     <Component
       ref={ref}
       className={className}
-      initial={{ opacity: 0, y: 24 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={prefersReducedMotion ? {} : { opacity: 0, y: 24 }}
+      animate={prefersReducedMotion ? {} : isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.65, delay: prefersReducedMotion ? 0 : delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </Component>

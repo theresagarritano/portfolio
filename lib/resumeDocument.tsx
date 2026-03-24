@@ -25,177 +25,200 @@ export type ResumeData = {
   certifications: string[];
 };
 
-const ACCENT = "#111111";
-const MUTED = "#777777";
-const BODY = "#333333";
-const LIGHT_RULE = "#e8e8e8";
-const SIDEBAR_BG = "#f7f7f7";
+// Site palette — dark theme matching the website
+const BLACK   = "#050505";
+const CYAN    = "#00f2fe";
+const FORE    = "#f0ede8";
+const BODY    = "#b0ada8";
+const MUTED   = "#666662";
+const RULE    = "#1e1e1e";
+const WHITE   = "#050505"; // page bg = site bg
 
-const styles = StyleSheet.create({
+const PAD_H = 52;
+const PAD_V = 44;
+
+const s = StyleSheet.create({
   page: {
     fontFamily: "Helvetica",
     fontSize: 9.5,
     color: BODY,
-    backgroundColor: "#ffffff",
+    backgroundColor: WHITE,
+    paddingTop: PAD_V,
+    paddingBottom: PAD_V,
+    paddingLeft: PAD_H,
+    paddingRight: PAD_H,
     lineHeight: 1.5,
   },
 
-  // ── Header ──────────────────────────────────────────
+  // ── Header ──────────────────────────────────────
   header: {
-    backgroundColor: ACCENT,
-    paddingTop: 32,
-    paddingBottom: 28,
-    paddingLeft: 48,
-    paddingRight: 48,
+    marginBottom: 28,
   },
-  headerName: {
-    fontFamily: "Helvetica-Bold",
-    fontSize: 28,
-    color: "#ffffff",
-    letterSpacing: 0.5,
-    marginBottom: 5,
+  // Thin cyan top rule — site's accent color used as a decorative bar
+  topRule: {
+    height: 2,
+    backgroundColor: CYAN,
+    marginBottom: 22,
   },
-  headerTitle: {
-    fontSize: 11,
-    color: "#cccccc",
-    letterSpacing: 0.3,
-    marginBottom: 8,
-  },
-  headerMeta: {
-    fontSize: 8.5,
-    color: "#aaaaaa",
-    letterSpacing: 0.2,
-  },
-
-  // ── Body (two columns) ──────────────────────────────
-  body: {
-    flexDirection: "row",
-    flex: 1,
-  },
-
-  // ── Sidebar ─────────────────────────────────────────
-  sidebar: {
-    width: "34%",
-    backgroundColor: SIDEBAR_BG,
-    paddingTop: 24,
-    paddingBottom: 24,
-    paddingLeft: 24,
-    paddingRight: 20,
-  },
-  sidebarSection: {
-    marginBottom: 20,
-  },
-  sidebarSectionTitle: {
-    fontFamily: "Helvetica-Bold",
+  eyebrow: {
     fontSize: 7.5,
-    color: ACCENT,
-    letterSpacing: 1.4,
-    textTransform: "uppercase",
-    marginBottom: 8,
-    paddingBottom: 4,
-    borderBottom: `1 solid ${LIGHT_RULE}`,
+    fontFamily: "Helvetica",
+    color: CYAN,
+    letterSpacing: 2.8,
+    marginBottom: 6,
   },
-  skillItem: {
-    fontSize: 9,
-    color: BODY,
-    marginBottom: 5,
-    paddingLeft: 8,
-  },
-  educationItem: {
+  name: {
+    fontFamily: "Helvetica-Bold",
+    fontSize: 30,
+    color: FORE,
+    letterSpacing: -0.3,
+    lineHeight: 1,
     marginBottom: 10,
   },
-  educationInstitution: {
-    fontFamily: "Helvetica-Bold",
-    fontSize: 9,
-    color: ACCENT,
-    marginBottom: 1,
+  contactRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 0,
   },
-  educationDegree: {
+  contactText: {
     fontSize: 8.5,
-    color: BODY,
-    lineHeight: 1.4,
-    marginBottom: 1,
-  },
-  educationDetail: {
-    fontSize: 8,
     color: MUTED,
-    lineHeight: 1.4,
+    letterSpacing: 0.2,
   },
-  certItem: {
+  contactSep: {
     fontSize: 8.5,
-    color: BODY,
-    marginBottom: 6,
-    lineHeight: 1.4,
+    color: CYAN,
+    marginLeft: 7,
+    marginRight: 7,
+  },
+  headerRule: {
+    height: 0.75,
+    backgroundColor: RULE,
+    marginTop: 20,
   },
 
-  // ── Main column ──────────────────────────────────────
-  main: {
-    width: "66%",
-    paddingTop: 24,
-    paddingBottom: 24,
-    paddingLeft: 28,
-    paddingRight: 36,
+  // ── Section ──────────────────────────────────────
+  section: {
+    marginBottom: 22,
   },
-  mainSection: {
-    marginBottom: 18,
+  sectionLabel: {
+    fontSize: 7,
+    fontFamily: "Helvetica",
+    color: CYAN,
+    letterSpacing: 2.5,
+    marginBottom: 10,
   },
-  mainSectionTitle: {
-    fontFamily: "Helvetica-Bold",
-    fontSize: 7.5,
-    color: ACCENT,
-    letterSpacing: 1.4,
-    textTransform: "uppercase",
-    marginBottom: 8,
-    paddingBottom: 4,
-    borderBottom: `1 solid ${LIGHT_RULE}`,
-  },
+
+  // ── Summary ──────────────────────────────────────
   summaryText: {
-    fontSize: 9.5,
+    fontSize: 10,
     color: BODY,
-    lineHeight: 1.6,
+    lineHeight: 1.65,
+    maxWidth: 480,
   },
 
-  // ── Experience ───────────────────────────────────────
+  // ── Experience ────────────────────────────────────
   expItem: {
-    marginBottom: 12,
+    marginBottom: 14,
+    paddingBottom: 14,
+    borderBottom: `0.5 solid ${RULE}`,
+  },
+  expItemLast: {
+    marginBottom: 14,
   },
   expHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-start",
-    marginBottom: 1,
+    alignItems: "baseline",
+    marginBottom: 2,
   },
   expCompany: {
     fontFamily: "Helvetica-Bold",
     fontSize: 10,
-    color: ACCENT,
+    color: FORE,
+    letterSpacing: 0.1,
   },
   expPeriod: {
     fontSize: 8,
     color: MUTED,
-    marginTop: 1,
+    letterSpacing: 0.3,
   },
   expTitle: {
-    fontSize: 8.5,
-    color: MUTED,
+    fontSize: 9,
     fontFamily: "Helvetica-Oblique",
+    color: MUTED,
+    letterSpacing: 0.1,
+    marginBottom: 5,
+  },
+
+  // ── Bullets ───────────────────────────────────────
+  bulletRow: {
+    flexDirection: "row",
     marginBottom: 3,
   },
-  expBullet: {
-    fontSize: 8.5,
+  bulletMark: {
+    fontSize: 8,
+    color: CYAN,
+    width: 12,
+    marginTop: 1,
+  },
+  bulletText: {
+    fontSize: 9,
     color: BODY,
-    lineHeight: 1.45,
-    marginBottom: 2,
-    paddingLeft: 8,
+    lineHeight: 1.5,
+    flex: 1,
+  },
+
+  // ── Bottom grid (skills / edu / certs) ────────────
+  bottomGrid: {
+    flexDirection: "row",
+    gap: 0,
+    borderTop: `0.75 solid ${RULE}`,
+    paddingTop: 20,
+    marginTop: 4,
+  },
+  gridCol: {
+    flex: 1,
+    paddingRight: 20,
+  },
+  gridColLast: {
+    flex: 1,
+  },
+  gridLabel: {
+    fontSize: 7,
+    fontFamily: "Helvetica",
+    color: CYAN,
+    letterSpacing: 2.5,
+    marginBottom: 9,
+  },
+  gridItem: {
+    fontSize: 9,
+    color: BODY,
+    marginBottom: 4,
+    lineHeight: 1.4,
+  },
+  gridItemMuted: {
+    fontSize: 8.5,
+    color: MUTED,
+    lineHeight: 1.4,
+    marginBottom: 1,
+  },
+  gridItemBold: {
+    fontFamily: "Helvetica-Bold",
+    fontSize: 9,
+    color: FORE,
+    marginBottom: 1,
+  },
+  eduBlock: {
+    marginBottom: 9,
   },
 });
 
-// Bullet helper (react-pdf doesn't support list-style)
 function Bullet({ text }: { text: string }) {
   return (
-    <View style={{ flexDirection: "row", marginBottom: 2 }}>
-      <Text style={{ fontSize: 8.5, color: MUTED, width: 10, paddingTop: 0.5 }}>›</Text>
-      <Text style={[styles.expBullet, { paddingLeft: 0, flex: 1 }]}>{text}</Text>
+    <View style={s.bulletRow}>
+      <Text style={s.bulletMark}>—</Text>
+      <Text style={s.bulletText}>{text}</Text>
     </View>
   );
 }
@@ -207,87 +230,75 @@ export function ResumeDocument({ data }: { data: ResumeData }) {
       author={data.name}
       subject="Professional Resume"
     >
-      <Page size="LETTER" style={styles.page}>
+      <Page size="LETTER" style={s.page}>
 
         {/* ── Header ── */}
-        <View style={styles.header}>
-          <Text style={styles.headerName}>{data.name}</Text>
-          <Text style={styles.headerTitle}>{data.title}</Text>
-          <Text style={styles.headerMeta}>
-            {data.email}{"   ·   "}{data.location}
-          </Text>
+        <View style={s.header}>
+          <View style={s.topRule} />
+          <Text style={s.eyebrow}>{data.title.toUpperCase()}</Text>
+          <Text style={s.name}>{data.name}</Text>
+          <View style={s.contactRow}>
+            <Text style={s.contactText}>{data.email}</Text>
+            <Text style={s.contactSep}>·</Text>
+            <Text style={s.contactText}>{data.location}</Text>
+          </View>
+          <View style={s.headerRule} />
         </View>
 
-        {/* ── Two-column body ── */}
-        <View style={styles.body}>
+        {/* ── Summary ── */}
+        <View style={s.section}>
+          <Text style={s.sectionLabel}>SUMMARY</Text>
+          <Text style={s.summaryText}>{data.summary}</Text>
+        </View>
 
-          {/* ── Sidebar ── */}
-          <View style={styles.sidebar}>
-
-            {/* Skills */}
-            <View style={styles.sidebarSection}>
-              <Text style={styles.sidebarSectionTitle}>Skills</Text>
-              {data.skills.map((skill, i) => (
-                <View key={i} style={{ flexDirection: "row", marginBottom: 5 }}>
-                  <Text style={{ fontSize: 8.5, color: MUTED, width: 10 }}>›</Text>
-                  <Text style={{ fontSize: 9, color: BODY, flex: 1 }}>{skill}</Text>
+        {/* ── Experience ── */}
+        <View style={s.section}>
+          <Text style={s.sectionLabel}>EXPERIENCE</Text>
+          {data.experience.map((exp, i) => {
+            const isLast = i === data.experience.length - 1;
+            return (
+              <View key={i} style={isLast ? s.expItemLast : s.expItem} wrap={false}>
+                <View style={s.expHeader}>
+                  <Text style={s.expCompany}>{exp.company}</Text>
+                  <Text style={s.expPeriod}>{exp.period}</Text>
                 </View>
-              ))}
-            </View>
-
-            {/* Education */}
-            <View style={styles.sidebarSection}>
-              <Text style={styles.sidebarSectionTitle}>Education</Text>
-              {data.education.map((edu, i) => (
-                <View key={i} style={styles.educationItem}>
-                  <Text style={styles.educationInstitution}>{edu.institution}</Text>
-                  <Text style={styles.educationDegree}>{edu.degree}</Text>
-                  {edu.detail && (
-                    <Text style={styles.educationDetail}>{edu.detail}</Text>
-                  )}
-                </View>
-              ))}
-            </View>
-
-            {/* Certifications */}
-            {data.certifications.length > 0 && (
-              <View style={styles.sidebarSection}>
-                <Text style={styles.sidebarSectionTitle}>Certifications</Text>
-                {data.certifications.map((cert, i) => (
-                  <Text key={i} style={styles.certItem}>{cert}</Text>
+                <Text style={s.expTitle}>{exp.title}</Text>
+                {exp.highlights.map((h, j) => (
+                  <Bullet key={j} text={h} />
                 ))}
               </View>
-            )}
+            );
+          })}
+        </View>
 
+        {/* ── Bottom grid: Skills / Education / Certifications ── */}
+        <View style={s.bottomGrid}>
+
+          <View style={s.gridCol}>
+            <Text style={s.gridLabel}>SKILLS</Text>
+            {data.skills.map((skill, i) => (
+              <Text key={i} style={s.gridItem}>{skill}</Text>
+            ))}
           </View>
 
-          {/* ── Main column ── */}
-          <View style={styles.main}>
-
-            {/* Summary */}
-            <View style={styles.mainSection}>
-              <Text style={styles.mainSectionTitle}>Summary</Text>
-              <Text style={styles.summaryText}>{data.summary}</Text>
-            </View>
-
-            {/* Experience */}
-            <View style={styles.mainSection}>
-              <Text style={styles.mainSectionTitle}>Experience</Text>
-              {data.experience.map((exp, i) => (
-                <View key={i} style={styles.expItem} wrap={false}>
-                  <View style={styles.expHeader}>
-                    <Text style={styles.expCompany}>{exp.company}</Text>
-                    <Text style={styles.expPeriod}>{exp.period}</Text>
-                  </View>
-                  <Text style={styles.expTitle}>{exp.title}</Text>
-                  {exp.highlights.map((h, j) => (
-                    <Bullet key={j} text={h} />
-                  ))}
-                </View>
-              ))}
-            </View>
-
+          <View style={s.gridCol}>
+            <Text style={s.gridLabel}>EDUCATION</Text>
+            {data.education.map((edu, i) => (
+              <View key={i} style={s.eduBlock}>
+                <Text style={s.gridItemBold}>{edu.institution}</Text>
+                <Text style={s.gridItem}>{edu.degree}</Text>
+                {edu.detail && <Text style={s.gridItemMuted}>{edu.detail}</Text>}
+              </View>
+            ))}
           </View>
+
+          <View style={s.gridColLast}>
+            <Text style={s.gridLabel}>CERTIFICATIONS</Text>
+            {data.certifications.map((cert, i) => (
+              <Text key={i} style={[s.gridItem, { marginBottom: 6 }]}>{cert}</Text>
+            ))}
+          </View>
+
         </View>
 
       </Page>

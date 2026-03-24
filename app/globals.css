@@ -16,12 +16,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-* {
-  cursor: none !important;
-}
-
-@media (pointer: coarse) {
-  * { cursor: auto !important; }
+/* Hide system cursor on pointer devices only */
+@media (pointer: fine) {
+  * { cursor: none !important; }
 }
 
 body {
@@ -52,41 +49,27 @@ body::after {
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% center; }
+  0%   { background-position: 0% center; }
   100% { background-position: 200% center; }
-}
-
-/* CTA glow pulse */
-.cta-pulse {
-  animation: cta-pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes cta-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.35); }
-  50% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
 }
 
 /* Marquee */
 .marquee-track {
-  animation: marquee 18s linear infinite;
+  animation: marquee 22s linear infinite;
   width: max-content;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
+  0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* Logo glow */
+/* Nav logo glow */
 @keyframes logo-glow {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(0, 242, 254, 0.15);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(0, 242, 254, 0.4), 0 0 40px rgba(255, 0, 127, 0.1);
-  }
+  0%, 100% { text-shadow: 0 0 8px rgba(0, 242, 254, 0.1); }
+  50%       { text-shadow: 0 0 18px rgba(0, 242, 254, 0.35), 0 0 36px rgba(255, 0, 127, 0.08); }
 }
 
 .logo-glow {
-  animation: logo-glow 3s ease-in-out infinite;
+  animation: logo-glow 4s ease-in-out infinite;
 }

@@ -12,9 +12,8 @@ export default function Contact() {
         LinkedIn or drop me an email.
       </p>
       <div className="flex flex-col gap-4">
-        {/* TODO: replace with your email address */}
         <a
-          href="mailto:your@email.com"
+          href="mailto:theresagarritano@gmail.com"
           className="inline-flex w-fit px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-colors"
         >
           Say Hello

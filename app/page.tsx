@@ -54,7 +54,7 @@ export default function Home() {
               </Link>
             </div>
             {/* aria-hidden: supplementary location info, not critical for AT users */}
-            <p aria-hidden="true" className="text-xs text-[#333330] uppercase tracking-[0.2em]">
+            <p aria-hidden="true" className="text-xs text-[#555550] uppercase tracking-[0.2em]">
               Atlassian · Austin, TX
             </p>
           </div>

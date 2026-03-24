@@ -83,7 +83,7 @@ export default function Projects() {
               />
 
               {/* aria-hidden: decorative index number */}
-              <span aria-hidden="true" className="text-xs text-[#2a2a28] sm:w-8 shrink-0 sm:pt-1">
+              <span aria-hidden="true" className="text-xs text-[#555550] sm:w-8 shrink-0 sm:pt-1">
                 {String(i + 1).padStart(2, "0")}
               </span>
 

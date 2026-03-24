@@ -75,7 +75,7 @@ export default function Contact() {
 
       <FadeUp delay={0.5}>
         {/* aria-hidden: decorative copyright, not critical info for AT users */}
-        <p aria-hidden="true" className="text-xs text-[#2a2a28] uppercase tracking-[0.2em] mt-16">
+        <p aria-hidden="true" className="text-xs text-[#555550] uppercase tracking-[0.2em] mt-16">
           © {new Date().getFullYear()} Theresa Garritano
         </p>
       </FadeUp>

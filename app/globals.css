@@ -92,6 +92,20 @@ body::after {
   animation: logo-glow 4s ease-in-out infinite;
 }
 
+/* ─── Scroll fade-up (FadeUp component, no framer-motion) ───────────────── */
+[data-fade="hidden"] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+[data-fade="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--fade-delay, 0s),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) var(--fade-delay, 0s);
+}
+
 /* ─── Reduced motion ─────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .gradient-text {
@@ -104,6 +118,12 @@ body::after {
   }
   .logo-glow {
     animation: none;
+  }
+  [data-fade="hidden"],
+  [data-fade="visible"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
   * {
     transition-duration: 0.01ms !important;

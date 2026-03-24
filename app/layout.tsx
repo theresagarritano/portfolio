@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
-import Cursor from "@/components/Cursor";
+import ClientCursor from "@/components/ClientCursor";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -45,7 +45,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Cursor />
+        <ClientCursor />
         <Navbar />
         <main id="main-content" className="flex-1 flex flex-col">
           {children}
